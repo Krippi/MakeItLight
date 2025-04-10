@@ -4,7 +4,7 @@ execute if score @s lightlevel matches 0..15 at @s unless block ~ ~ ~ minecraft:
 
 # Player set light to 0 and break the light block
 execute if score @s lightlevel matches 0 at @s if block ~ ~ ~ minecraft:light run summon item ~ ~ ~ {Item:{id:"minecraft:light",Count:1b},Glowing:1b}
-
+execute if score @s lightlevel matches 0 at @s if block ~ ~ ~ minecraft:light run tellraw @s {"text":"You broke the light and the item got dropped.","color":"green"}
 
 #Output
 execute if score @s lightlevel matches 0 at @s if block ~ ~ ~ minecraft:light run setblock ~ ~ ~ minecraft:air
@@ -28,9 +28,6 @@ execute if score @s lightlevel matches 15 at @s if block ~ ~ ~ minecraft:light r
 #After Output
 # Player successfully set the light level
 execute if score @s lightlevel matches 0..15 at @s if block ~ ~ ~ minecraft:light run tellraw @s [ {"text":"You set the lightlevel to: ","color":"green"}, {"score":{"name":"@s","objective":"lightlevel"},"color":"gold"}]
-
-# Player set light to 0 and break the light block
-execute if score @s lightlevel matches 0 at @s if block ~ ~ ~ minecraft:light run tellraw @s {"text":"You broke the light. The item got dropped.","color":"red"}
 
 # Reset the score so the player can receive permission again this tick
 scoreboard players set @s lightlevel -1
