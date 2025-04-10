@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "show_notification": true,
+    "pattern": [
+        "GGG",
+        "GTG",
+        "GGG"
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:glass_pane"
+        },
+        "T": {
+            "item": "minecraft:torch"
+        }
+    },
+    "result": {
+        "id": "minecraft:light"
+    }
+    
+}
